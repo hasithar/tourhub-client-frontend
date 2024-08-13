@@ -1,4 +1,10 @@
+// "use client";
+
 import { Inter } from "next/font/google";
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import theme from "./theme";
+
 import "./globals.css";
 import "@/styles/style.scss";
 
@@ -12,26 +18,25 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <div>{children}</div>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
 
-// "use client";
 // import React, { useEffect, useState } from "react";
 // import Loader from "@/components/common/Loader/Loader.component";
-// import { Inter } from "next/font/google";
-// import { ThemeProvider } from "@mui/material/styles";
-// import CssBaseline from "@mui/material/CssBaseline";
-// import theme from "./theme";
+
 // import "jsvectormap/dist/jsvectormap.css";
 // import "flatpickr/dist/flatpickr.min.css";
 // import "@/styles/satoshi.css";
 // import "@/styles/style.css";
 // import "@/styles/global.scss";
 // // import "./globals.scss";
-
-// const inter = Inter({ subsets: ["latin"] });
 
 // export default function RootLayout({ children }) {
 //   const [sidebarOpen, setSidebarOpen] = useState(false);

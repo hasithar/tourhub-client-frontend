@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const NewsletterForm = () => {
   return (
-    <section className="bg-slate-50 py-12 bg-gray relative overflow-hidden z-10">
+    <section className="bg-slate-100 py-16 bg-gray relative overflow-hidden z-10">
       <div className="absolute left-0 top-0 w-full h-full -z-10">
         <Image src="/images/dotted_bg.svg" alt="dots" fill />
       </div>
