@@ -1,3 +1,5 @@
+import Image from "next/image";
+import FeaturedGrid from "@/components/common/FeaturedGrid/FeaturedGrid.component";
 import SectionTitle from "@/components/common/SectionTitle/SectionTitle.component";
 import TabbedContent from "@/components/common/TabbedContent/TabbedContent.component";
 import DefaultLayout from "@/components/layout/DefaultLayout.component";
@@ -79,10 +81,54 @@ const categories = [
   },
 ];
 
+const featured = [
+  {
+    name: "Exploring the Ancient Temples and Historical Sites of Sri Lanka",
+    category: "Cultural",
+    description:
+      "A comprehensive tour covering Sri Lanka's rich cultural heritage, including visits to Sigiriya Rock Fortress, the ancient city of Polonnaruwa, and the sacred city of Kandy.",
+    image: "/images/tours/ancient-temples-historical-sites-sri-lanka.jpg",
+  },
+  {
+    name: "Thrilling Jungle Safaris and Mountain Adventures in Sri Lanka",
+    category: "Adventure",
+    description:
+      "An exhilarating adventure tour featuring jeep safaris in Yala National Park, trekking in the Knuckles Mountain Range, and exploring the scenic beauty of Ella.",
+    image: "/images/tours/jungle-safaris-mountain-adventures-sri-lanka.jpg",
+  },
+  {
+    name: "Relaxing Beach Escapes and Coastal Wonders of Sri Lanka",
+    category: "Beach",
+    description:
+      "A relaxing tour focusing on Sri Lanka's stunning coastline, with visits to the beautiful beaches of Mirissa, Galle Fort, and the laid-back charm of Unawatuna.",
+    image: "/images/tours/beach-escapes-coastal-wonders-sri-lanka.jpg",
+  },
+];
+
 const HomePage = () => {
   return (
     <DefaultLayout>
       HomePage
+      <section id="home" class="relative overflow-hidden z-10 pb-20 pt-20">
+        <div>
+          <div class="absolute bottom-0 left-0 w-full h-full bg-white"></div>
+          <div
+            class="hidden lg:block absolute bottom-0 left-0  w-full h-full"
+            style={{ left: "-20%", top: "-20%" }}
+          >
+            <Image
+              className="w-full h-full object-colver"
+              src={featured[0]?.image}
+              alt=""
+              width={1024}
+              height={768}
+              style={{ filter: "blur(100px)" }}
+            />
+          </div>
+        </div>
+
+        <FeaturedGrid featured={featured} />
+      </section>
       <section className="pt-20  pb-20">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-8 xl:px-0">
           <SectionTitle
