@@ -5,6 +5,7 @@ import TabbedContent from "@/components/common/TabbedContent/TabbedContent.compo
 import DefaultLayout from "@/components/layout/DefaultLayout.component";
 import NewsletterForm from "@/components/NewsletterForm/NewsletterForm.component";
 import Reviews from "@/components/Reviews/Reviews.component";
+// import Slider from "@/components/common/Slider/Slider.component";
 
 const categories = [
   {
@@ -108,7 +109,7 @@ const featured = [
 const HomePage = () => {
   return (
     <DefaultLayout>
-      HomePage
+      {/* <Slider /> */}
       <section id="home" class="relative overflow-hidden z-10 pb-20 pt-20">
         <div>
           <div class="absolute bottom-0 left-0 w-full h-full bg-white"></div>

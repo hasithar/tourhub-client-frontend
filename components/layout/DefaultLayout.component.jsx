@@ -1,10 +1,12 @@
 import React from "react";
 import Footer from "@/components/Footer/Footer.component";
+import Header from "@/components/Header/Header.component";
 
 const DefaultLayout = ({ children }) => {
   return (
     <>
-      <main>{children}</main>
+      <Header />
+      <main className="mt-20">{children}</main>
       <Footer />
     </>
   );
